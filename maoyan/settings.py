@@ -14,6 +14,10 @@ BOT_NAME = 'maoyan'
 SPIDER_MODULES = ['maoyan.spiders']
 NEWSPIDER_MODULE = 'maoyan.spiders'
 
+MONGODB_HOST = '127.0.0.1'
+MONGODB_PORT = 27017
+MONGODB_DBNAME = 'spiders'
+MONGODB_DOCNAME = 'maoyan'
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
 USER_AGENT = 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko)' \
@@ -67,6 +71,7 @@ ROBOTSTXT_OBEY = True
 # See https://doc.scrapy.org/en/latest/topics/item-pipeline.html
 ITEM_PIPELINES = {
     'maoyan.pipelines.MaoyanPipeline': 300,
+    'maoyan.pipelines.MongoPipline': 400
 }
 
 # Enable and configure the AutoThrottle extension (disabled by default)
